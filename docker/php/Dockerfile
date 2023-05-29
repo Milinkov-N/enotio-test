@@ -12,4 +12,4 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 COPY ./entrypoint.sh /
 
-ENTRYPOINT /entrypoint.sh
+ENTRYPOINT [ "/entrypoint.sh" ]

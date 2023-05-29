@@ -156,8 +156,7 @@
             try {
                 $stmt = $this->_conn->prepare($sql);
                 $stmt->execute();
-                $row = $stmt->fetch();
-                return $row["ts"];
+                return $stmt->fetch();
             } catch (PDOException $e) {
                 die("Error: Couldn't add new timestamp (Cause: " . $e->getMessage() . ")");
             }

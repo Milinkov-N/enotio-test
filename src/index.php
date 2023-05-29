@@ -40,7 +40,10 @@
     <div class="header">
       <span>Last feteched <?php
         $db = new Db('enotio');
-        echo $db->getLastTimestamp();
+        if (!$db->getLastTimestamp()) {
+          include('fetch.php');
+        }
+        echo $db->getLastTimestamp()["ts"];
         $db->close();
         unset($db);
       ?></span>
